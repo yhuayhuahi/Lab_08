@@ -8,7 +8,7 @@ my $cgi = CGI -> new;
 my $expresion = $cgi -> param('Expresion');
 
 ## Operaciones con expresiones regulares
-
+my $resultado;
 
 ## Elaboracion del archivo html
 print $cgi -> header('text/html');
@@ -24,9 +24,17 @@ print <<HTML;
     <title>Calculadora Online</title>
 </head>
 <body>
-    
+    <header>
+        <h2>Online Calculator</h2>
+    </header>
+    <main>
+        <section>
+            <h3>El resultado es: $resultado</h3>
+        </section>
+    </main>
+    <footer>
+        &copy;2023 <b>Yourdyy</b> 
+    </footer>
 </body>
 <html>
-
-
 HTML
