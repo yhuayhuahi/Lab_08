@@ -19,7 +19,7 @@ while ($expresion =~ /(^\d+).(\d+)/g) {
     $numero2 = $2;
 }
 $expresion =~ s/$numero1//;
-$expresion =~ s/$numero1//;
+$expresion =~ s/$numero2//;
 $operador = $expresion;
 
 if ($operador eq "-") {
@@ -43,6 +43,7 @@ print <<HTML;
     <meta name="autor" content="Yourdyy Yossimar Huayhua Hillpa">
     <meta name="Descripción" content="Pagina web para hacer operaciones en linea.">
     <link rel="shortcut icon" href="../src/calculadora.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/estilo.css"/>
     <title>Calculadora Online</title>
 </head>
 <body>
