@@ -14,14 +14,17 @@ my $numero1;
 my $numero2;
 my $operador;
 
+## Se extraen los dos numeros enviados.
 while ($expresion =~ /(^\d+).(\d+)/g) {
     $numero1 = $1;
     $numero2 = $2;
 }
+## Se quitan los numeros capturados de la expresion inicial.
 $expresion =~ s/$numero1//;
 $expresion =~ s/$numero2//;
 $operador = $expresion;
 
+## Dependiendo del operador del que se haya enviado, hace la operacion.
 if ($operador eq "-") {
     $resultado = $numero1 - $numero2;
 } elsif ($operador eq "x") {
