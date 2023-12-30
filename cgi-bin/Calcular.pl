@@ -10,6 +10,28 @@ my $expresion = $cgi -> param('Expresion');
 ## Operaciones con expresiones regulares
 my $resultado;
 
+my $numero1;
+my $numero2;
+my $operador;
+
+while ($expresion =~ /(^\d+).(\d+)/g) {
+    $numero1 = $1;
+    $numero2 = $2;
+}
+$expresion =~ s/$numero1//;
+$expresion =~ s/$numero1//;
+$operador = $expresion;
+
+if ($operador eq "-") {
+    $resultado = $numero1 - $numero2;
+} elsif ($operador eq "x") {
+    $resultado = $numero1 * $numero2;
+} elsif ($operador eq "/") {
+    $resultado = $numero1 / $numero2;  
+} else {
+    $resultado = $numero1 + $numero2;
+}
+
 ## Elaboracion del archivo html
 print $cgi -> header('text/html');
 print <<HTML;
@@ -20,7 +42,7 @@ print <<HTML;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="autor" content="Yourdyy Yossimar Huayhua Hillpa">
     <meta name="Descripción" content="Pagina web para hacer operaciones en linea.">
-    <link rel="shortcut icon" href="src/calculadora.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../src/calculadora.ico" type="image/x-icon" />
     <title>Calculadora Online</title>
 </head>
 <body>
